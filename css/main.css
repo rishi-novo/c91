@@ -55,6 +55,7 @@ body {
   height: 100%;
   /* prevent horizontal scrolling */
   overflow: hidden;
+  overflow-y: hidden;
 }
 
 body {
@@ -1345,7 +1346,7 @@ input::-moz-focus-inner {
 .home-content__text p {
   font-size: 1.8rem;
   line-height: 2;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.75);
   margin-top: 6.6rem;
   margin-right: 15%;
 }
@@ -2204,7 +2205,7 @@ html.no-csstransitions .home-content__main {
 .info-toggle {
   z-index: 502;
   background-color: #000000;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  /* border: 1px solid rgba(255, 255, 255, 0.12); */
   font-family: "metropolis-medium", sans-serif;
   font-size: 12px;
   text-transform: uppercase;
@@ -2226,7 +2227,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .info-toggle::after {
-  content: "More Info";
+  content: "Know More";
   display: block;
   position: absolute;
   top: 0;
