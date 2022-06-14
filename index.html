@@ -65,8 +65,8 @@
 
                     <div class="home-content__subscribe">
                         <form id="mc-form" class="group" novalidate="true">
-                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
-                            <input type="submit" name="subscribe" value="SUBMIT">
+                            <input type="email" value="" name="EMAIL" class="email" id="email" placeholder="Email Address" required="">
+                            <input type="submit" name="subscribe" value="SUBMIT" onsubmit="sendMail(); reset(); return false;">
                             <label for="mc-email" class="subscribe-message"></label>
                         </form>
                     </div>
@@ -132,8 +132,8 @@
                 <div class="info-block">
                     <div class="home-content__subscribe">
                         <form id="mc-form" class="group" novalidate="true">
-                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
-                            <input type="submit" name="subscribe" value="Submit">
+                            <input type="email" value="" name="EMAIL" class="email" id="emailSignup" placeholder="Email Address" required="">
+                            <input type="submit" name="subscribe" value="Submit" onsubmit="getEmail(); reset(); return false;">
                             <label for="mc-email" class="subscribe-message"></label>
                         </form>
                     </div>
@@ -180,7 +180,33 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/polygons.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="js/main.js"></script>
+    <script>
+
+        //function to get email from homepage email field
+        function sendMail () {
+                Email.send({
+                SecureToken : "",
+                To : 'support@novostack.com',
+                From : document.getElementById('email').value,
+                Subject : "New Signup for Coins 91 Beta Program",
+                Body : document.getElementById('email').value + "wants to have early access of Coins 91"
+            }).then(message => alert(message));
+        }
+        
+        //function to get email from sidebar form
+        function getEMail () {
+                Email.send({
+                SecureToken : "",
+                To : 'support@novostack.com',
+                From : document.getElementById('emailSignup').value,
+                Subject : "New Signup for Coins 91 Beta Program",
+                Body : document.getElementById('emailSignup').value + "wants to have early access of Coins 91"
+            }).then(message => alert(message));
+        }
+    </script>
+
 
 </body>
 
