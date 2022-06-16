@@ -1357,6 +1357,7 @@ input::-moz-focus-inner {
   margin: 4.2rem 0 0 0;
   padding: 0;
   position: relative;
+  z-index: 111;
 }
 
 #mc-form {
@@ -1369,7 +1370,8 @@ input::-moz-focus-inner {
   font-size: 1.5rem;
   line-height: 3rem;
   padding: 1.2rem 170px 1.2rem 24px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   color: #FFFFFF;
   margin-bottom: 1.8rem;
 }
